@@ -118,8 +118,15 @@ a:hover { color: var(--bronze-dark); text-decoration: underline; }
 
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  /* Fixed 3 columns so six cards lay out 3-3, not 4-2. */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+@media (max-width: 860px) {
+  .features { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .features { grid-template-columns: 1fr; }
 }
 .feature {
   background: var(--card);

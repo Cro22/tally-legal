@@ -87,6 +87,8 @@ function clean(src) {
   // Repoint old GitHub Pages cross-links to the clean Cloudflare paths.
   s = s.replace(/https?:\/\/cro22\.github\.io\/tally-legal\/privacy-policy\.html/gi, "/privacy");
   s = s.replace(/https?:\/\/cro22\.github\.io\/tally-legal\/term-of-service\.html/gi, "/terms");
+  // Drop the "...was created using Termly's ... Generator" credit block (and its <br>).
+  s = s.replace(/\s*(?:<br\s*\/?>\s*)*<div>\s*<span[^>]*>\s*This [^<]*was created using Termly[\s\S]*?<\/div>/i, "");
   return s.trim();
 }
 

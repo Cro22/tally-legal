@@ -70,7 +70,3 @@ and paste the matching file's HTML:
 | `magic-link.html`     | Magic Link                   |
 
 They use Supabase's `{{ .ConfirmationURL }}` variable for the action button/link.
-
-## TODO
-
-- Replace the `href="#"` App Store button in `index.html` with the real App Store URL.
