@@ -1,0 +1,13 @@
+{
+  "name": "tally-legal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tally marketing site, legal pages, and Supabase email templates (Cloudflare Workers + static assets).",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

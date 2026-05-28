@@ -1,0 +1,245 @@
+/* Tally — shared design system
+   Tokens lifted from the app's brand: cream canvas, ink text, bronze accent.
+   No build step; this stylesheet is linked directly by every page. */
+
+:root {
+  --cream: #FAFAF8;
+  --card: #FFFFFF;
+  --ink: #1A1A1A;
+  --bronze: #B08D57;
+  --bronze-dark: #9A7A48;
+  --muted: #555555;
+  --muted-2: #888888;
+  --faint: #999999;
+  --border: #EEEEEE;
+  --radius-card: 16px;
+  --radius-btn: 8px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --maxw: 1040px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--bronze); text-decoration: none; }
+a:hover { color: var(--bronze-dark); text-decoration: underline; }
+
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 20px 24px;
+}
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.brand:hover { text-decoration: none; }
+.brand svg { display: block; }
+.brand-name {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--ink);
+}
+.site-nav { display: flex; gap: 24px; }
+.site-nav a {
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+}
+.site-nav a:hover { color: var(--bronze); text-decoration: none; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  background-color: var(--bronze);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 14px 32px;
+  border-radius: var(--radius-btn);
+  letter-spacing: 0.3px;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover { background-color: var(--bronze-dark); color: #FFFFFF; text-decoration: none; }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover { background: #FFFFFF; color: var(--ink); }
+
+/* ---------- Hero / landing ---------- */
+.hero { text-align: center; padding: 72px 0 56px; }
+.hero .mark { margin: 0 auto 20px; }
+.hero h1 {
+  font-size: 44px;
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.5px;
+}
+.hero p.lead {
+  font-size: 19px;
+  color: var(--muted);
+  max-width: 560px;
+  margin: 0 auto 32px;
+  line-height: 1.5;
+}
+.hero .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.section { padding: 40px 0; }
+.section-title {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin: 0 0 32px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.feature {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 28px 26px;
+}
+.feature h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; color: var(--ink); }
+.feature p { margin: 0; font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+
+/* ---------- Generic content card (support, 404) ---------- */
+.content-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 44px 48px;
+}
+.content-card h1 { font-size: 30px; font-weight: 700; margin: 0 0 8px; }
+.content-card h2 { font-size: 19px; font-weight: 600; margin: 32px 0 10px; }
+.content-card p { color: var(--muted); margin: 0 0 14px; }
+.page-intro { color: var(--muted-2); margin-bottom: 28px; }
+
+.faq { margin: 8px 0 0; }
+.faq-item { border-top: 1px solid var(--border); padding: 18px 0; }
+.faq-item:last-child { border-bottom: 1px solid var(--border); }
+.faq-item h3 { margin: 0 0 6px; font-size: 16px; font-weight: 600; color: var(--ink); }
+.faq-item p { margin: 0; color: var(--muted); font-size: 15px; }
+
+.email-pill {
+  display: inline-block;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  padding: 12px 18px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.email-pill:hover { color: var(--bronze); text-decoration: none; }
+
+/* ---------- Legal pages (Termly content, restyled) ---------- */
+.legal { padding: 40px 0 72px; }
+.legal-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 48px 56px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--muted);
+  overflow-wrap: break-word;
+}
+.legal-card [data-custom-class='title'],
+.legal-card [data-custom-class='title'] * {
+  font-family: var(--font) !important;
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  color: var(--ink) !important;
+}
+.legal-card [data-custom-class='subtitle'],
+.legal-card [data-custom-class='subtitle'] * {
+  font-family: var(--font) !important;
+  font-size: 14px !important;
+  color: var(--muted-2) !important;
+}
+.legal-card [data-custom-class='heading_1'],
+.legal-card [data-custom-class='heading_1'] * {
+  font-family: var(--font) !important;
+  font-size: 21px !important;
+  font-weight: 600 !important;
+  color: var(--ink) !important;
+}
+.legal-card [data-custom-class='heading_2'],
+.legal-card [data-custom-class='heading_2'] * {
+  font-family: var(--font) !important;
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  color: var(--ink) !important;
+}
+.legal-card [data-custom-class='body_text'],
+.legal-card [data-custom-class='body_text'] * {
+  font-family: var(--font) !important;
+  font-size: 15px !important;
+  color: var(--muted) !important;
+}
+.legal-card [data-custom-class='link'],
+.legal-card [data-custom-class='link'] * {
+  font-family: var(--font) !important;
+  color: var(--bronze) !important;
+  word-break: break-word !important;
+}
+.legal-card h1 { font-size: 30px; font-weight: 700; color: var(--ink); }
+.legal-card a { color: var(--bronze); }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--cream);
+  margin-top: 24px;
+}
+.footer-inner { padding: 40px 24px; text-align: center; }
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.footer-brand .brand-name { font-size: 17px; }
+.footer-nav { display: flex; gap: 22px; justify-content: center; margin-bottom: 18px; flex-wrap: wrap; }
+.footer-nav a { color: var(--muted); font-size: 14px; }
+.footer-tagline { font-size: 13px; color: var(--faint); margin: 0 0 4px; }
+.footer-legal { font-size: 12px; color: #AAAAAA; margin: 0; }
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 34px; }
+  .hero { padding: 48px 0 40px; }
+  .legal-card { padding: 32px 22px; }
+  .content-card { padding: 32px 24px; }
+  .site-nav { gap: 16px; }
+}
